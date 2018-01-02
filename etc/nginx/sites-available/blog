@@ -1,0 +1,22 @@
+server {
+listen		80;
+server_name	blog;
+
+root		/var/www/localhost/$server_name/public;
+index index.php index.html index.htm;
+
+error_log	/var/log/nginx/blog.error.log;
+
+location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+    
+include /etc/nginx/templates/php;
+include /etc/nginx/templates/wordpress;
+include /etc/nginx/templates/errors;
+include /etc/nginx/templates/security;
+}
+
+#ln -s /etc/nginx/sites-available/blog /etc/nginx/sites-enabled/blog
+#chown -R :www-data /var/www/blog
+#chmod -R 775 /var/www/blog/app/storage

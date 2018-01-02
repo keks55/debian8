@@ -1,0 +1,14 @@
+server {
+listen          80;
+server_name     woo246;
+
+root            /var/www/$server_name/;
+
+error_log       /var/log/nginx/woo246.error.log;
+
+include /etc/nginx/templates/php;
+include /etc/nginx/templates/static;
+include /etc/nginx/templates/wordpress;
+
+
+}

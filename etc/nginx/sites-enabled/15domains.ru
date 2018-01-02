@@ -1,0 +1,1 @@
+/etc/nginx/sites-available/15domains.ru

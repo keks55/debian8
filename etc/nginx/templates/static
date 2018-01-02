@@ -1,0 +1,29 @@
+location = /favicon.ico {
+    log_not_found off;
+    access_log off;
+}
+
+location = /robots.txt {
+    allow all;
+    log_not_found off;
+    access_log off;
+}
+
+# Media: images, icons, video, audio
+location ~* \.(?:jpg|jpeg|gif|png|ico|cur|gz|svg|svgz|mp4|ogg|ogv|webm|htc)$ {
+	expires max;
+	access_log off;
+	add_header Cache-Control "public";
+}
+
+# CSS, javascript, fonts
+location ~* \.(?:css|js|ttf|ttc|otf|eot|woff|woff2)$ {
+	expires max;
+	access_log off;
+	add_header Cache-Control "public";
+}
+
+# Feed
+location ~* \.(?:rss|atom)$ {
+	expires 1h;
+}

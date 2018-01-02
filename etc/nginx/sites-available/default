@@ -1,0 +1,40 @@
+server {
+
+listen			80 default_server;
+server_name		localhost;
+
+root			/var/www/;
+
+#error_page  404  			/404.html;
+#error_page  403  			/403.html;
+#error_page  500 502 503 504 		/50x.html;
+
+#location / {
+	#allow   192.168.0.103;  
+    #allow   213.111.228.103;    
+    #deny    all; 
+	autoindex on;
+    #try_files $uri $uri/ /index.php?$args;
+#}
+
+location /kkk/ {
+    try_files $uri $uri/ /kkk/index.php?$args;
+}
+location /wp_vogue/ {
+    try_files $uri $uri/ /wp_vogue/index.php?$args;
+}
+
+location /linuxdash/ {
+	try_files $uri $uri/ =404;
+	auth_basic "Restricted Content";
+	auth_basic_user_file /etc/nginx/pass/.htpasswd;
+}
+
+include /etc/nginx/templates/static;
+include /etc/nginx/templates/php;
+include /etc/nginx/templates/wordpress;
+
+#include /etc/nginx/templates/security;
+#include /etc/nginx/templates/perlcgi;
+
+}

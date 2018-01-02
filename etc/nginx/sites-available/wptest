@@ -1,0 +1,12 @@
+server {
+listen          80;
+server_name     wptest;
+
+root            /var/www/$server_name/;
+
+error_log       /var/log/nginx/wptest.error.log;
+
+include /etc/nginx/templates/php;
+include /etc/nginx/templates/wordpress;
+
+}

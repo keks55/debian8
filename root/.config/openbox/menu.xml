@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+  <menu id="root-menu" label="Openbox 3">
+    <item label="Terminal emulator">
+      <action name="Execute">
+        <execute>x-terminal-emulator</execute>
+      </action>
+    </item>
+    <separator/>
+    <item label="Netbeans">
+      <action name="Execute">
+        <execute>/bin/sh "/usr/local/netbeans-8.2/bin/netbeans"</execute>
+      </action>
+    </item>
+    <separator/>
+    <item label="Firefox">
+      <action name="Execute">
+        <execute>firefox</execute>
+      </action>
+    </item>
+    <item label="Chrome">
+      <action name="Execute">
+        <execute>google-chrome --no-sandbox --user-data-dir</execute>
+      </action>
+    </item>
+    <separator/>
+     <item label="Commander">
+      <action name="Execute">
+        <execute>doublecmd</execute>
+      </action>
+    </item>
+    <item label="FTP client">
+      <action name="Execute">
+        <execute>filezilla</execute>
+      </action>
+    </item>
+    <separator/>
+    <item label="Calculator">
+      <action name="Execute">
+        <execute>galculator</execute>
+      </action>
+    </item>
+     <item label="MusicPlayer">
+      <action name="Execute">
+        <execute>/opt/deadbeef/bin/deadbeef</execute>
+      </action>
+    </item>
+    <item label="Text Editor">
+      <action name="Execute">
+        <execute>geany</execute>
+      </action>
+    </item>
+     <separator/>
+     <item label="Openbox config">
+      <action name="Execute">
+        <execute>~/.config/openbox/menu.xml</execute>
+      </action>
+    </item>
+    <separator/>
+    <!-- This requires the presence of the 'menu' package to work -->
+    <!--<menu id="/Debian"/>
+    <separator/>
+    <menu id="client-list-menu"/>
+    <separator/>-->
+    <item label="ObConf">
+      <action name="Execute">
+        <execute>obconf</execute>
+      </action>
+    </item>
+    <item label="Reconfigure">
+      <action name="Reconfigure"/>
+    </item>
+    <separator/>
+    <item label="Sleep">
+      <action name="Execute">
+        <execute>pm-suspend</execute>
+      </action>
+    </item>
+    <separator/>
+    <item label="Exit">
+      <!--<action name="Execute">
+        <command>xfce4-session-logout</command>
+      </action>-->
+     <action name="Exit"/>
+    </item>   
+     <separator/>
+    <item label="Reboot">
+      <action name="Execute">
+              <execute>
+                sudo shutdown -r now
+        </execute>
+      </action>
+    </item>   
+  </menu>
+</openbox_menu>

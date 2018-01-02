@@ -1,0 +1,18 @@
+server {
+listen          80;
+server_name     kkk;
+
+root		/var/www/$server_name/;
+
+error_log	/var/log/nginx/kkk.error.log;
+
+
+#include /etc/nginx/templates/static;
+#include /etc/nginx/templates/php;
+#include /etc/nginx/templates/wordpress;
+
+}
+
+#chown -R www-data /var/cache/nginx/fastcgi_temp
+#chmod 700 /var/cache/nginx/fastcgi/kkk
+#chown -R root /var/cache/nginx/fastcgi_temp
