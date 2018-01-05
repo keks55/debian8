@@ -9,13 +9,13 @@ root			/var/www/;
 #error_page  403  			/403.html;
 #error_page  500 502 503 504 		/50x.html;
 
-#location / {
+location / {
 	#allow   192.168.0.103;  
     #allow   213.111.228.103;    
     #deny    all; 
 	autoindex on;
     #try_files $uri $uri/ /index.php?$args;
-#}
+}
 
 location /kkk/ {
     try_files $uri $uri/ /kkk/index.php?$args;

@@ -53,6 +53,8 @@ alias bbb='git push --set-upstream origin'
 alias mm='git merge'
 alias del='git branch -D'
 alias delete='git push origin --delete'
+# add only modified to git
+alias addmod='git ls-files --modified | xargs git add'
 
 #laravel
 #export PATH="$PATH:~/.config/composer/vendor/bin"
@@ -67,6 +69,9 @@ alias migrate='php artisan migrate'
 alias rrlist='php artisan route:list'
 # stop port 8000
 alias ttt='kill $(sudo lsof -t -i:8000)'
+
+#programs
+alias gg='geany'
 
 
 #git remote add origin git@github.com:keks55/debian8.git
